@@ -1,0 +1,137 @@
+[
+    {
+        "id": "b4f3e020-a459-4c8a-9378-f9701d24e2de",
+        "title": "SPARRING PARTNERS",
+        "description": "Three novellas: “Homecoming,” “Strawberry Moon” and “Sparring Partners.”",
+        "contributor": "by John Grisham",
+        "author": "John Grisham",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9780385549325.jpg"
+    },
+    {
+        "id": "a15ae6ce-8b8b-4eee-9c24-c1b5f7e57fe0",
+        "title": "MEANT TO BE",
+        "description": "Joe, the disappointing scion of a family considered American royalty, and Cate, a budding model seeking to escape her surroundings, find each other.",
+        "contributor": "by Emily Giffin",
+        "author": "Emily Giffin",
+        "isReturned": true,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9780425286647.jpg"
+    },
+    {
+        "id": "bb801666-e8a3-42c8-becb-2ce7d013efa3",
+        "title": "NIGHTWORK",
+        "description": "Harry Booth, a master thief, breaks things off with Miranda when a dangerous contact might harm her.",
+        "contributor": "by Nora Roberts",
+        "author": "Nora Roberts",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9781250278197.jpg"
+    },
+    {
+        "id": "357365f7-ccf6-4078-8c57-22dce399cae9",
+        "title": "22 SECONDS",
+        "description": "The 22nd book in the Women’s Murder Club series. Lindsay Boxer returns as word gets around about a shipment of drugs and weapons.",
+        "contributor": "by James Patterson and Maxine Paetro",
+        "author": "James Patterson and Maxine Paetro",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9780316499378.jpg"
+    },
+    {
+        "id": "ab1336e9-ac58-41ce-b533-f7ab8fd35549",
+        "title": "THE SUMMER PLACE",
+        "description": "A wedding between Ruby Danhauser and her pandemic boyfriend at a family beach house in Cape Cod brings to light family secrets.",
+        "contributor": "by Jennifer Weiner",
+        "author": "Jennifer Weiner",
+        "isReturned": true,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9781501133572.jpg"
+    },
+    {
+        "id": "0cc95cef-3b7c-4a74-98f2-59c8826ab632",
+        "title": "THE MIDNIGHT LIBRARY",
+        "description": "Nora Seed finds a library beyond the edge of the universe that contains books with multiple possibilities of the lives one could have lived.",
+        "contributor": "by Matt Haig",
+        "author": "Matt Haig",
+        "isReturned": true,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg"
+    },
+    {
+        "id": "91ed0f89-cd49-4db0-900c-223eb381807e",
+        "title": "RUN, ROSE, RUN",
+        "description": "A singer-songwriter goes to Nashville seeking stardom but is followed by her dark past.",
+        "contributor": "by Dolly Parton and James Patterson",
+        "author": "Dolly Parton and James Patterson",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9780759554344.jpg"
+    },
+    {
+        "id": "965e7f5b-853b-4aea-a414-5d673183f48c",
+        "title": "DREAM TOWN",
+        "description": "The third book in the Archer series. Archer, Dash and Callahan search for a missing screenwriter who had a dead body turn up in her home.",
+        "contributor": "by David Baldacci",
+        "author": "David Baldacci",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9781538719770.jpg"
+    },
+    {
+        "id": "0c77478f-2c6a-4bec-98f4-8e0b2b414d9a",
+        "title": "THIS TIME TOMORROW",
+        "description": "A 40-year-old woman finds new meaning in past events when she goes back in time and relives her 16th birthday in 1996.",
+        "contributor": "by Emma Straub",
+        "author": "Emma Straub",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9780525539001.jpg"
+    },
+    {
+        "id": "79a4dfe8-553d-4e24-942b-14a6c6757934",
+        "title": "ONE ITALIAN SUMMER",
+        "description": "During a summer trip in Italy, Katy’s late mother reappears as a 30-year-old woman.",
+        "contributor": "by Rebecca Serle",
+        "author": "Rebecca Serle",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9781982166793.jpg"
+    },
+    {
+        "id": "0ddf58fb-99db-45d0-8c8e-5d55b79c0b54",
+        "title": "THE LAST THING HE TOLD ME",
+        "description": "Hannah Hall discovers truths about her missing husband and bonds with his daughter from a previous relationship.",
+        "contributor": "by Laura Dave",
+        "author": "Laura Dave",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9781501171345.jpg"
+    },
+    {
+        "id": "bc144699-abf3-4021-8890-290df6874134",
+        "title": "THE PARIS APARTMENT",
+        "description": "Jess has suspicions about her half-brother’s neighbors when he goes missing.",
+        "contributor": "by Lucy Foley",
+        "author": "Lucy Foley",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9780063003057.jpg"
+    },
+    {
+        "id": "d102fd0e-2337-4206-b4f3-dc8ac1933043",
+        "title": "LESSONS IN CHEMISTRY",
+        "description": "A scientist and single mother living in California in the 1960s becomes a star on a TV cooking show.",
+        "contributor": "by Bonnie Garmus",
+        "author": "Bonnie Garmus",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9780385547345.jpg"
+    },
+    {
+        "id": "e544858c-0c7b-45bb-a509-ebcf42401756",
+        "title": "THE HOMEWRECKERS",
+        "description": "A widow starring in a beach house renovation reality show gets caught up in competing love interests and an old missing persons case.",
+        "contributor": "by Mary Kay Andrews",
+        "author": "Mary Kay Andrews",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9781250278364.jpg"
+    },
+    {
+        "id": "f1c2e91f-ad4a-4b2b-bd8a-4988d20ec89f",
+        "title": "BOOK OF NIGHT",
+        "description": "A bartender working at a Berkshires dive bar deals with doppelgängers, billionaires and magicians seeking a vast and terrible power.",
+        "contributor": "by Holly Black",
+        "author": "Holly Black",
+        "isReturned": false,
+        "bookImage": "https://storage.googleapis.com/du-prd/books/images/9781250812193.jpg"
+    }
+]

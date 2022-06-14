@@ -8,12 +8,6 @@
     <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="src\aspnetcore-react.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="src\aspnetcore-https.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="src\logo.svg" />
   </ItemGroup>
 </Project>

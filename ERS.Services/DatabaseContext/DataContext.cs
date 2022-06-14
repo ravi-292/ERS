@@ -12,7 +12,7 @@ namespace ERS.Services.DatabaseContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BookHistory>().HasNoKey();
+            modelBuilder.Entity<BookHistory>().HasKey(e => new { e.BookId });
         }
 
         public DbSet<Book> Books { get; set; }

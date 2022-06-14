@@ -2,7 +2,12 @@ using ERS.Services.Models;
 using Microsoft.AspNetCore.Cors;
 using ERS.Services.DatabaseContext;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.InMemory;
+using System;
+using System.Linq;
+
 
 namespace ERS.Services.Controllers
 {
@@ -20,10 +25,23 @@ namespace ERS.Services.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Book>>> Get()
+        public async Task<ActionResult<IEnumerable<Book>>> Get()
         {
            
-            return Ok(await _context.Books.ToListAsync());
+            //return Ok(await _context.Books.ToListAsync());
+
+            return Ok(await _context.Books
+                   .Include(e => e.BookBorrowHistories)
+                   .Select(e => new Book
+                   {
+                    BookId = e.BookId,
+                    Title = e.Title,
+                    Description = e.Description,                 
+                    ImageUrl = e.ImageUrl,
+                    BookImage = e.ImageUrl,
+                    IsAvailable = e.BookBorrowHistories.Count == 0 || e.BookBorrowHistories.All(x => x.BookReturn != null),
+                    BookBorrowHistories = e.BookBorrowHistories
+                }).ToListAsync());
         }
 
         [HttpGet("{bookId}")]
@@ -32,7 +50,7 @@ namespace ERS.Services.Controllers
             var book = await _context.Books.FindAsync(bookId);
 
             if (book == null)
-                return BadRequest("Book not found");
+                return NotFound();
 
             return Ok(book);
         }
@@ -40,32 +58,38 @@ namespace ERS.Services.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Book>>> AddBook(Book book)
         {
+            book.BookId = _context.Books.Select(x => x.BookId).Max() + 1;            
             _context.Books.Add(book);
             await _context.SaveChangesAsync();
             return Ok(await _context.Books.ToListAsync());
             
         }
 
-        [HttpPut]
-        public async Task<ActionResult<Book>> UpdateBook(Book _book)
+        [HttpPut("{bookId}/{action}")]
+        public async Task<ActionResult> AddBookHistory(int bookId, string action = "Borrow")
         {
-            var book = await _context.Books.FindAsync(_book.id);
+            var bookHistory = await _context.BookHistories.FindAsync(bookId);
+            int rows = 0;
 
-            if (book == null)
-                return BadRequest("Book not found");
+            if (bookHistory == null || action.Equals("Borrow",StringComparison.OrdinalIgnoreCase))
+            {
+                var bookhistory = new BookHistory { BookId = bookId, BookBorrow = DateTime.Now , BookReturn = null };
+                _context.BookHistories.Add(bookhistory);
+                rows = await _context.SaveChangesAsync();
+            }
+            else
+            {
+                var bookHistories = _context.BookHistories.AsNoTracking().Where( bookHistory => bookHistory.BookId == bookId &&  bookHistory.BookReturn == null).FirstOrDefault();
+                bookHistories.BookReturn = DateTime.Now;
+                _context.BookHistories.Update(bookHistories);
+                rows = await _context.SaveChangesAsync();
+                
+            }
 
-            book.bookId = _book.bookId;
-            book.title = _book.title;
-            book.author = _book.author;
-            book.description = _book.description;
-            book.bookImage = _book.bookImage;
-            book.isReturned = _book.isReturned;
-            book.createdAt = new DateTime();
 
-            await _context.SaveChangesAsync();
+            //return Ok(await _context.Books.ToListAsync());
+            return Ok(rows);
 
-            return Ok(await _context.Books.ToListAsync());
-            
         }
 
         [HttpDelete("{bookId}")]
@@ -74,7 +98,7 @@ namespace ERS.Services.Controllers
             var book = await _context.Books.FindAsync(bookId);
 
             if (book == null)
-                return BadRequest("Book not found");
+                return NotFound();
 
             _context.Books.Remove(book);
 

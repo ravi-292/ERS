@@ -1,17 +1,27 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace ERS.Services.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class Book
 {
+
+    public Book()
+    {
+
+        BookBorrowHistories = new HashSet<BookHistory>();
+    }
+
     [Key]
-    public int id { get; set; }
-    public int bookId { get; set; }
-    public string title { get; set; } = string.Empty;
-    public string author { get; set; } = string.Empty;
-    public string description { get; set; } = string.Empty;
-    public DateTime createdAt { get; set; } = DateTime.Now;
-    public bool isReturned { get; set; }
-    public string bookImage { get; set; } = string.Empty;
-    
+    public int BookId { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public string Author { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;   
+    public bool IsReturned { get; set; }
+    public bool IsAvailable { get; set; }
+    public string BookImage { get; set; } = string.Empty;
+    public string ImageUrl { get; set; } = string.Empty;
+   
+    public virtual ICollection<BookHistory> BookBorrowHistories { get; set; }
+
 }

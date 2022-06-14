@@ -8,7 +8,9 @@ namespace ERS.Services.Models
     {
         [Required]
         public int BookId { get; set; }
+
         public DateTime BookBorrow { get; set; }
+
         public DateTime? BookReturn { get; set; } = null;
 
         //[ForeignKey("BookId")]

@@ -1,6 +1,7 @@
 using ERS.Services.DatabaseContext;
 using ERS.Services.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace ERS.Services.Repositories
 {
@@ -12,15 +13,14 @@ namespace ERS.Services.Repositories
         Book UpdateBook(Book _book);
         List<Book> DeleteBook(string bookId);
     }
-}
-
-public class BookService
-{
-    private DataContext context;
-
-    public BookService(DataContext context)
+    public class BookService
     {
-        context = context;
-    }
+        private readonly DataContext context;
 
+        public BookService(DataContext context)
+        {
+            this.context = context;
+        }
+
+    }
 }

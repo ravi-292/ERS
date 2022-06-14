@@ -24,15 +24,28 @@ namespace ERS.Services.DatabaseContext
             context.Books.AddRange(
 
             new Book
-             {
-                 BookId = 1,
-                 Title = "SPARRING PARTNERS",
-                 Description = "Three novellas: “Homecoming,” “Strawberry Moon” and “Sparring Partners.”",
-                 Author = "John Grisham",
-                 IsReturned = false,
-                 IsAvailable = true,
-                 BookImage = "https://storage.googleapis.com/du-prd/books/images/9780385549325.jpg",
-                 ImageUrl = "https://storage.googleapis.com/du-prd/books/images/9780385549325.jpg"
+            {
+                BookId = 1,
+                Title = "SPARRING PARTNERS",
+                Description = "Three novellas: “Homecoming,” “Strawberry Moon” and “Sparring Partners.”",
+                Author = "John Grisham",
+                ImageUrl = "https://storage.googleapis.com/du-prd/books/images/9780385549325.jpg",
+                BookBorrowHistories = new List<BookHistory>() {
+                new BookHistory
+                {
+                    BookBorrow = new DateTime(2020, 11, 11),
+                    BookReturn = new DateTime(2020, 11, 18)
+                },
+                new BookHistory
+                {
+                    BookBorrow = new DateTime(2020, 11, 22),
+                    BookReturn = new DateTime(2020, 11, 26)
+                },
+                new BookHistory
+                {
+                    BookBorrow = new DateTime(2020, 11, 29),
+                    BookReturn = new DateTime(2020, 12, 2)
+                }}
             },
             new Book
             {
@@ -41,8 +54,6 @@ namespace ERS.Services.DatabaseContext
                 Description =
                     "Joe, the disappointing scion of a family considered American royalty, and Cate, a budding model seeking to escape her surroundings, find each other.",
                 Author = "Emily Giffin",
-                IsReturned = true,
-                BookImage = "https://storage.googleapis.com/du-prd/books/images/9780425286647.jpg",
                 ImageUrl = "https://storage.googleapis.com/du-prd/books/images/9780425286647.jpg"
             },
             new Book
@@ -52,9 +63,6 @@ namespace ERS.Services.DatabaseContext
                 Description =
                     "Harry Booth, a master thief, breaks things off with Miranda when a dangerous contact might harm her.",
                 Author = "Nora Roberts",
-                IsReturned = false,
-                IsAvailable = true,
-                BookImage = "https://storage.googleapis.com/du-prd/books/images/9781250278197.jpg",
                 ImageUrl = "https://storage.googleapis.com/du-prd/books/images/9781250278197.jpg"
             },
             new Book
@@ -64,10 +72,7 @@ namespace ERS.Services.DatabaseContext
                 Description =
                     "The 22nd book in the Women’s Murder Club series. Lindsay Boxer returns as word gets around about a shipment of drugs and weapons.",
                 Author = "James Patterson and Maxine Paetro",
-                IsReturned = false,
-                IsAvailable = true,
-                BookImage = "https://storage.googleapis.com/du-prd/books/images/9780316499378.jpg",
-                ImageUrl = "https://storage.googleapis.com/du-prd/books/images/9780316499378.jpg"
+                ImageUrl = "https://storage.googleapis.com/du-prd/books/images/9780316499378.jpg",
             },
             new Book
             {
@@ -76,9 +81,6 @@ namespace ERS.Services.DatabaseContext
                 Description =
                     "A wedding between Ruby Danhauser and her pandemic boyfriend at a family beach house in Cape Cod brings to light family secrets.",
                 Author = "Jennifer Weiner",
-                IsReturned = true,
-                IsAvailable = true,
-                BookImage = "https://storage.googleapis.com/du-prd/books/images/9781501133572.jpg",
                 ImageUrl = "https://storage.googleapis.com/du-prd/books/images/9781501133572.jpg"
             },
             new Book
@@ -87,14 +89,32 @@ namespace ERS.Services.DatabaseContext
                 Title = "THE MIDNIGHT LIBRARY",
                 Description = "Nora Seed finds a library beyond the edge of the universe that contains books with multiple possibilities of the lives one could have lived.",
                 Author = "Matt Haig",
-                IsReturned = true,
-                IsAvailable = true,
-                BookImage = "https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg",
                 ImageUrl = "https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg"
             });
 
             context.SaveChanges();
-            
+
+            //context.BookHistories.AddRange(
+            //    new BookHistory
+            //    {
+            //        BookId = 1,
+            //        BookBorrow = new DateTime(2020, 11, 11),
+            //        BookReturn = new DateTime(2020, 11, 18)
+            //    },
+            //    new BookHistory
+            //    {
+            //        BookId = 1,
+            //        BookBorrow = new DateTime(2020, 11, 22),
+            //        BookReturn = new DateTime(2020, 11, 26)
+            //    },
+            //    new BookHistory
+            //    {
+            //        BookId = 1,
+            //        BookBorrow = new DateTime(2020, 11, 29),
+            //        BookReturn = new DateTime(2020, 12, 2)
+            //    }
+            //);
+            //context.SaveChanges();
         }
     }
 }

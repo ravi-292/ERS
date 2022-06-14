@@ -128,13 +128,15 @@ namespace ERS.Services.Controllers
         public async Task<ActionResult<List<Book>>> AddBook(BookViewModel book)
         {
             var newBookId = _context.Books.Select(x => x.BookId).Max() + 1;
+            var randomBook = await _context.Books.OrderBy(r => Guid.NewGuid()).FirstOrDefaultAsync();
+
             _context.Books.Add(new Book
             {
                 BookId = newBookId,
                 Title = book.Title,
                 Description = book.Description,
                 Author = book.Author,
-                ImageUrl = book.ImageUrl,
+                ImageUrl = randomBook.ImageUrl,
             });
             await _context.SaveChangesAsync();
             return Ok();
